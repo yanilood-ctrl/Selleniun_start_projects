@@ -1,5 +1,4 @@
 package Selleniun_start_projects.Selleniun_start_projects;
-
 import static org.junit.Assert.assertNotEquals;
 
 import java.util.concurrent.TimeUnit;
@@ -12,8 +11,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.Select;
 
-public class SelleninumTesting_2 {
-	
+
+public class PasswordFieldTests {
 	static WebDriver  browser;
 	 
 	 @Before
@@ -26,23 +25,5 @@ public class SelleninumTesting_2 {
 		      browser.get("https://testpages.eviltester.com/styled/validation/input-validation.html");
 		
 	  }
-		
-	@Test
-	public void Tests1() {
-   	
-		
-			WebElement textBox = browser.findElement(By.id("firstname"));
-			textBox.sendKeys("chaya");
-			textBox = browser.findElement(By.id("surname"));
-			textBox.sendKeys("Zilberstein");
-			textBox = browser.findElement(By.id("age"));
-			textBox.sendKeys("21");
-			Select drpCountry = new Select(browser.findElement(By.name("country")));
-			drpCountry.selectByVisibleText("Israel");
-			String currentPage=browser.getCurrentUrl();
-			browser.findElement(By.cssSelector("input[type='submit']")).click();
-			String newPage = browser.getCurrentUrl();
-			assertNotEquals(currentPage, newPage);
-   }
 
 }
